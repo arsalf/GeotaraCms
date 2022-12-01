@@ -1,0 +1,15 @@
+@mixin colored-hoverable($color, $value) {
+  .hoverable-#{$color} {
+    &:hover {
+      a {
+        color: #fff !important;
+      }
+      background-color: $value !important;
+    }
+  }
+}
+
+// make hoverable:bg-* classes
+@each $color, $value in $colors {
+  @include colored-hoverable($color, $value);
+}

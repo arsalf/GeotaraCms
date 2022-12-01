@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | DataTables</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/plugins/dropzone/min/dropzone.min.css">
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-gray-000 border-0">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <div class="d-none d-md-block">
+            <form class="form-inline bg-white rounded-pill">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button class="btn" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+                <input class="form-control border-0 rounded-pill" type="search" placeholder="Search"
+                  aria-label="Search">
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item bg-white rounded-pill dropdown mr-3">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+
+        <!-- User -->
+        <li class="nav-item bg-white rounded-pill dropdown">
+          <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#">
+            <!-- img thubmnail user -->
+            <img width="30" height="30" src="/dist/img/sitara.png" class="img-circle img-fluid" alt="User Image">
+            <span class="ml-1 d-none d-md-block"> Si Tara</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-user mr-2"></i> Profile
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-cog mr-2"></i> Settings
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-light-primary elevation-4">
+      <!-- Brand Logo -->
+      <div class="py-3">
+        <a href="/index.html" class="brand-link border-0 d-flex justify-content-center">
+          <img src="/dist/img/geotara-logo.png" alt="AdminLTE Logo" class="img-fluid">
+        </a>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/geo/landing.html" class="nav-link">
+                <i class="nav-icon fas fa-house-user"></i>
+                <p>
+                  Landing Page
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">GEOPARK</li>
+            <li class="nav-item">
+              <a href="/pages/geo/my.html" class="nav-link">
+                <i class="nav-icon fas fa-globe"></i>
+                <p>
+                  My Geopark
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/geo/area.html" class="nav-link active">
+                <i class="nav-icon fas fa-globe-asia"></i>
+                <p>
+                  Geoarea
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/geo/site.html" class="nav-link">
+                <i class="nav-icon fas fa-location-arrow"></i>
+                <p>
+                  Geosite
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">PUBLIKASI</li>
+            <li class="nav-item">
+              <a href="/pages/geo/publikasi/artikel.html" class="nav-link">
+                <i class="nav-icon fas fa-newspaper"></i>
+                <p>
+                  Artikel
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:;" class="nav-link">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>
+                  Event
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/pages/geo/publikasi/event.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Daftar Event</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/pages/geo/publikasi/ticket.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ticket</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-header">Partnership</li>
+            <li class="nav-item">
+              <a href="/pages/geo/partnership/accomodation.html" class="nav-link">
+                <i class="nav-icon fas fa-hotel"></i>
+                <p>
+                  Accomodation
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/geo/partnership/travel.html" class="nav-link">
+                <i class="nav-icon fas fa-bus-alt"></i>
+                <p>
+                  Travel & Tour
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/geo/partnership/attraction.html" class="nav-link">
+                <i class="nav-icon fas fa-gamepad"></i>
+                <p>
+                  Attraction
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/geo/partnership/merchant.html" class="nav-link">
+                <i class="nav-icon fas fa-mug-hot"></i>
+                <p>
+                  Merchant & Souvenir
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">PENGATURAN</li>
+            <li class="nav-item mb-3">
+              <a href="/pages/geo/user.html" class="nav-link">
+                <i class="nav-icon fas fa-user-alt"></i>
+                <p>
+                  User
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Form penamambahan Geoarea</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item">Geoarea</li>
+                <li class="breadcrumb-item active">Tambah</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Cover</label>
+                        <form action="#" method="post" class="dropzone" id="my-great-dropzone">
+                          <div class="dz-message">
+                            <div class="col-xs-8">
+                              <div class="message">
+                                <!-- Upload icon -->
+                                <div class="icon">
+                                  <i class="fas fa-cloud-upload-alt fa-10x text-blue"></i>
+                                </div>
+                                <p>Upload File Image/Video</p>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="form-group">
+                        <label>Map</label>
+                        <form action="#" method="post" class="dropzone" id="my-great-dropzone">
+                          <div class="dz-message">
+                            <div class="col-xs-8">
+                              <div class="message">
+                                <!-- Upload icon -->
+                                <div class="icon">
+                                  <i class="fas fa-cloud-upload-alt fa-10x text-blue"></i>
+                                </div>
+                                <p>Upload File Image/Video</p>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Nama Geoarea</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Geosite">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori</label>
+                        <select class="form-control">
+                          <option>Wisata Alam</option>
+                          <option>Wisata Budaya</option>
+                          <option>Wisata Edukasi</option>
+                          <option>Wisata Kuliner</option>
+                          <option>Wisata Belanja</option>
+                          <option>Wisata Hiburan</option>
+                          <option>Wisata Religi</option>
+                          <option>Wisata Sejarah</option>
+                          <option>Wisata Olahraga</option>
+                          <option>Wisata Kesehatan</option>
+                          <option>Wisata Lainnya</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Deskripsi</label>
+                        <textarea class="form-control" rows="3" placeholder="Deskripsi ..."></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Alamat</label>
+                        <textarea class="form-control" rows="3" placeholder="Alamat ..."></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Koordinat</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              Latitude
+                            </span>
+                            <input type="text" class="form-control float-right" id="koordinat">
+
+                            <span class="input-group-text">
+                              Longitude
+                            </span>
+                            <input type="text" class="form-control float-right" id="koordinat">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col form-group d-flex justify-content-center">
+                      <button type="submit" class="btn btn-primary">Tambahkan</button>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.2.0
+      </div>
+      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="/plugins/jszip/jszip.min.js"></script>
+  <script src="/plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="/plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="/dist/js/demo.js"></script>
+
+  <script src="/plugins/dropzone/min/dropzone.min.js"></script>
+  <script src="/plugins/moment/moment.min.js"></script>
+  <script src="/plugins/inputmask/jquery.inputmask.min.js"></script>
+  <!-- date-range-picker -->
+  <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Page specific script -->
+  <script>
+    $(function () {
+      //Date range picker
+      $('#tiket').daterangepicker()
+
+      Dropzone.options.myGreatDropzone = { // camelized version of the `id`
+        paramName: "file", // The name that will be used to transfer the file
+        maxFilesize: 2, // MB
+        accept: function (file, done) {
+          if (file.name == "justinbieber.jpg") {
+            done("Naha, you don't.");
+          }
+          else { done(); }
+        }
+      };
+
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
+</body>
+
+</html>
